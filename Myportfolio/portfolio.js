@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 
 const app = express();
-const port = 3003;
+const port = 3008;
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -12,20 +12,16 @@ const connection = mysql.createConnection({
     database: 'portfolio'
 });
 
+// Add error handling to the MySQL connection
 connection.connect((err) => {
     if (err) {
         console.error('MySQL connection error:', err);
-        return;
+        process.exit(1); // Exit the application if the connection fails
     }
     console.log('Connected to MySQL');
 });
-app.use(express.static(__dirname + '/portfolio.html'));
-app.use(express.static(__dirname + '/portfolio.css'));
-app.use(express.static(__dirname + '/portfolio.js'));
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
+// Modify the POST endpoint to include more detailed error handling
 app.post('/submit', (req, res) => {
     const { name, email, message } = req.body;
 
@@ -33,7 +29,7 @@ app.post('/submit', (req, res) => {
     connection.query(sql, [name, email, message], (err, result) => {
         if (err) {
             console.error('MySQL insertion error:', err);
-            res.status(500).json({ message: 'Internal Server Error' });
+            res.status(500).json({ message: 'Internal Server Error', error: err.message });
             return;
         }
 
@@ -42,7 +38,9 @@ app.post('/submit', (req, res) => {
     });
 });
 
-app.listen(port, '0.0.0.0', () => {
-    console.log(`Server is running at http://localhost:${port}`);
+// Add a generic error handler
+app.use((err, req, res, next) => {
+    console.error('Error:', err);
+    res.status(500).send('Internal Server Error');
 });
 
