@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="portfolio.css">
-    </head>
-    <body>
-        <header >
-        <h1>MY PORTFOLIO</h1>
-            <a href="#home">Home</a>
-            <a href="#about me">About me</a>
-            <a href="#Skills">Skills</a>
-            <a href="#massege">Message</a>
-            <a href="#contact">Contact me</a>
-            <a href="Sairam's Resume.pdf" download="Resume">Resume</a>  
-    </header><hr>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <center>
+        <header>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about-me">About me</a>
+                <a href="#skills">Skills</a>
+                <a href="#message">Message</a>
+                <a href="#contact">Contact me</a>
+                <a href="Sairam's Resume.pdf" download="Resume">Resume</a>  
+            </nav>
+        </header>
+    </center>
     <section id="home" class="animated">
-            <h1>Margani Sairam</h1>
-            <img src="my.jpg" alt="My image" height="300px" width="300px">
-            <h3>Full Stack Web Developer | Java Programmer</h3>
+        <h1>Margani Sairam</h1>
+        <img src="my.jpg" alt="My image" height="300px" width="300px">
+        <h3>Full Stack Web Developer | Java Programmer</h3>
     </section>
-    <section id="about me">
+    <section id="about-me">
         <h1>About me</h1>
         <center>
-        <div class="div1">
-            <h1 style="margin: 5px 0px;">About me</h1>
-            <h3 style="margin: 0px 40px; ;" >I am a Engineer Passinated on Programming and Web development.I am very focused on Full Stack Web Development.I learnt all the modules in Full Stack.And I am good in Front end and Backend expecially in java programming.</h3>
-            <h1 style="margin: 10px 0px;">Career Objective</h1>
-            <h3 style=" margin: 0px 40px;"> I am the one who is driving my life on the road of career. On This beautiful running journey i am the person who faced and going to the Up's and downs but I am Ride my life until i reach the dead End.</h3>
-        </div>
+            <div class="content-box">
+                <h1 style="margin: 5px 0px;">About me</h1>
+                <h3 style="margin: 0px 40px;">I am an Engineer passionate about Programming and Web Development. I am very focused on Full Stack Web Development. I have learned all the modules in Full Stack, and I am proficient in both frontend and backend, especially in Java programming.</h3>
+                <h1 style="margin: 10px 0px;">Career Objective</h1>
+                <h3 style="margin: 0px 40px;">I am driving my life on the road of career. On this beautiful journey, I face ups and downs, but I will ride my life until I reach the end.</h3>
+            </div>
         </center>
     </section>
-    <section id="Skills">
+    <section id="skills">
         <h1>Skills & Experience</h1>
         <center>
             <table>
@@ -65,45 +68,50 @@
         <progress id="html" value="92" max="100"> 92% </progress><br>
         <label for="java"> JAVA :</label>
         <progress id="java" value="82" max="100"> 82% </progress><br>
-        <label for="MS"> MS OFFICE :</label>
-        <progress id="MS" value="80" max="100"> 80% </progress><br>
-        <label for="JS"> JAVA SCRIPT :</label>
-        <progress id="JS" value="72" max="100"> 72% </progress><br>
-        <label for="PYTHON"> PYTHON :</label>
-        <progress id="PYTHON" value="68" max="100"> 68% </progress><br>
+        <label for="ms"> MS OFFICE :</label>
+        <progress id="ms" value="80" max="100"> 80% </progress><br>
+        <label for="js"> JAVA SCRIPT :</label>
+        <progress id="js" value="72" max="100"> 72% </progress><br>
+        <label for="python"> PYTHON :</label>
+        <progress id="python" value="68" max="100"> 68% </progress><br>
     </section>
-    <section id="massege">
+    <section id="message">
         <h1>Drop Your Message</h1>
-        <div class="div2">
+        <div class="content-box">
             <form id="contactForm">
                 <label for="name" style="font-size: 120%;">Name :</label>
                 <input type="text" id="name" name="name" placeholder="Enter First Name" required><br>
                 <label for="email" style="font-size: 120%;">Email :</label>
-                <input type="email" id="email" name="email" placeholder="Enter your mail" required><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
                 <label for="message" style="font-size: 120%;">Message :</label>
-                <input type="text" id="message" name="message" placeholder="Enter your message" required style="height: 50px ;"><br>
-                <p><input type="submit" value="Send Message">  <input type="reset" value="Reset" onclick="resetForm()"></p>
+                <textarea id="message" name="message" placeholder="Enter your message" required style="height: 50px;"></textarea><br>
+                <p class="contact">
+                    <input type="submit" value="Send Message">  
+                    <input type="reset" value="Reset" onclick="resetForm()">
+                </p>
             </form>
         </div>
     </section><hr>
     <footer id="contact">
+        <section class="contact-links">
             <a href="#home">Home</a>
-            <a href="#about me">About me</a>
-            <a href="#Skills">Skills</a>
-            <a href="#massege">Message</a>
+            <a href="#about-me">About me</a>
+            <a href="#skills">Skills</a>
+            <a href="#message">Message</a>
             <a href="#contact">Contact me</a>
-            <a href="Sairam's Resume.pdf" download="Resume">Resume</a>  
+            <a href="SAIRAM MARGANI RESUME.pdf" download="Resume">Resume</a> 
+        </section> 
         <h1 style="margin-top: 10px;">Contact Me</h1>         
-                <a href="https://www.linkedin.com/in/sairam-margani-7b79a4277/" class="fa fa-linkedin" target="_blank" style="background-color: blue;width: 30px; font-size: 125%;"></a>          
-                <a href="https://wa.me/+916302122551?text=Hello Sairam" target="_blank" class ="fa fa-whatsapp" style="background-color: rgb(6, 242, 6);width: 30px; font-size: 125%;"></a>
-                <a href="https://github.com/Sairam2979/Sairam-Margani" target="_blank" class="fa fa-github"  style="background-color: white; color: black; font-size: 125%;"></a>
-                <a href="portfolio.html" class="fa fa-home" style="background-color: white; color: black; font-size: 125%;"></a>
-        <h3>&copy; Sairam Margani | All rights reserved | E-mail : marganisairam2979@gmail.com</a></h3>
+        <a href="https://www.linkedin.com/in/sairam-margani-7b79a4277/" class="fa fa-linkedin" target="_blank" style="font-size: 125%;"></a>          
+        <a href="https://wa.me/+916302122551?text=Hello Sairam" target="_blank" class="fa fa-whatsapp" style="font-size: 125%;"></a>
+        <a href="https://github.com/Sairam2979/Sairam-Margani" target="_blank" class="fa fa-github" style="font-size: 125%;"></a>
+        <a href="portfolio.html" class="fa fa-home" style="font-size: 125%;"></a>
+        <h3>&copy; Sairam Margani | All rights reserved | E-mail: marganisairam2979@gmail.com</h3>
     </footer>
     <script>
-    function resetForm() {
-        document.getElementById('contactForm').reset();
-    }</script>
-    </body>
+        function resetForm() {
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
 </html>
-
